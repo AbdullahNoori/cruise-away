@@ -1,0 +1,22 @@
+<fieldset>
+        <legend>{{ title }}</legend>
+        
+        <!-- TITLE -->
+        <p>
+            <label for='vacation-title'>Title</label><br>
+            <input id='vaction-title' type='text' name='title' value='{{ vacation.title }}'/>
+        </p>
+        <!-- DESCRIPTION -->
+        <p>
+          <label for='description'>Description</label><br>
+          <input id='description' type='text' name='description' value='{{ vacation.description }}' />
+        </p>
+        <!-- VIDEO IDS -->
+        <p>
+          <label for='vacation_list-video-ids'> Videos </label><br>
+          <p>Add image urls, Separate with a newline.</p>
+          <textarea id='7G9pTbBerB0' name='images' rows='10'>{{ ", \n".join(vacation.images) }}</textarea>
+        </p>
+    </fieldset>
+    
+    

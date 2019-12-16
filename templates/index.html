@@ -1,0 +1,35 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1 class="m-5">iCruise</h1>
+    <div class="row">
+        <div class="col-lg">
+            <div class="row">
+                {% for vacation in vacations %}
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <img src="{{vacation.images[0]}}" alt="" width="100%" height="250px">
+                      <div class="card-body">
+                        <h4 class="card-title">
+                          <a href="">{{ vacation.title }}</a>
+                        </h4>
+                        <p class="card-text">{{ vacation.description }}</p>
+                      </div>
+                      <div class="card-footer">
+                        <a class="btn btn-primary btn-lg float-right" href="/vacations/{{ vacation._id }}">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.col-lg-9 -->
+    </div>
+    <!-- /.row -->    
+</div>
+<!-- /.container -->
+{% endblock %}

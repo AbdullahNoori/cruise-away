@@ -1,0 +1,38 @@
+<!-- templates/playlists_new.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center p-5">
+        <form method='POST' action='/vacations'>
+            <fieldset>
+                <legend>New Cruise</legend>
+                <!-- TITLE -->
+                <p>
+                    <label for='vacation-title'>Destination</label><br>
+                    <input id='vacation-title' type='text' name='title' />
+                </p>
+        
+                <!-- DESCRIPTION -->
+                <p>
+                    <label for='description'>Activities</label><br>
+                    <input id='description' type='text' name='description' />
+                </p>
+        
+                <!-- Image IDS -->
+                <p>
+                    <label for='vacations-images'>Images</label>
+                    <p>Use image links</p>
+                    <textarea id='vacation-images' name='images' rows='3'></textarea>
+                </p>
+        
+            </fieldset>
+        
+            <!-- BUTTON -->
+            <p>
+                <button type='submit'>Save</button>
+            </p>
+        </form>        
+    </div>
+</div>
+{% endblock %}
