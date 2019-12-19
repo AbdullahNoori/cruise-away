@@ -12,7 +12,8 @@ app = Flask(__name__)
 @app.route('/')
 def vacations_index():
     """Show all vacations."""
-    return render_template('index.html', vacations=vacations.find())
+    vacationList = vacations.find()
+    return render_template('index.html', vacations=vacationList)
 
 @app.route('/vacations/new')
 def vacations_new():
@@ -31,7 +32,7 @@ def vacations_submit():
     vacation = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
-        'image': request.form.get('image')
+        'images': images,
     }
     vacations.insert_one(vacation)
     return redirect(url_for('vacations_index'))
